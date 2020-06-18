@@ -1,31 +1,38 @@
-/**
+package game; /**
  * @author Libby Goldin 204566236
  * @version 1.0
  * @since 2020-05-06
  */
 import biuoop.DrawSurface;
 import biuoop.KeyboardSensor;
+import geometry.Line;
+import geometry.Point;
+import geometry.Rectangle;
+import utilities.Axis;
+import utilities.Side;
+
 import java.awt.Color;
 
 /**
  * paddle class implements two interfaces: Collidable and Sprite.
  */
 public class Paddle implements Sprite, Collidable {
-    private static final int PADDLE_MOVEMENT = 10;
+    //private static final int PADDLE_MOVEMENT = 10;
     private static final Color FILL_COLOR = Color.LIGHT_GRAY;
-    private static final Color BORDER_COLOR = Color.BLACK;
+    //private static final Color BORDER_COLOR = Color.BLACK;
     private Block block;
     private KeyboardSensor keyboard;
     private GameEnvironment environment;
-
+    private int speed;
     /**
      * constructor.
      * @param block object of th paddle
      * @param keyboard sensor to make the paddle react to buttons press of the user
      */
-    public Paddle(Block block, KeyboardSensor keyboard) {
+    public Paddle(Block block, KeyboardSensor keyboard, int speed) {
         this.block = block;
         this.keyboard = keyboard;
+        this.speed = speed;
     }
 
     /**
@@ -33,8 +40,8 @@ public class Paddle implements Sprite, Collidable {
      * @param rect rectangle object of the paddle
      * @param keyboard sensor to make the paddle react to buttons press of the user
      */
-    public Paddle(Rectangle rect, KeyboardSensor keyboard) {
-        this(new Block(rect, FILL_COLOR), keyboard);
+    public Paddle(Rectangle rect, KeyboardSensor keyboard,int speed) {
+        this(new Block(rect, FILL_COLOR), keyboard, speed);
     }
 
     /**
@@ -43,8 +50,8 @@ public class Paddle implements Sprite, Collidable {
      * @param color of the paddle
      * @param keyboard sensor to make the paddle react to buttons press of the user
      */
-    public Paddle(Rectangle rect, Color color, KeyboardSensor keyboard) {
-        this(new Block(rect, color), keyboard);
+    public Paddle(Rectangle rect, Color color, KeyboardSensor keyboard, int speed) {
+        this(new Block(rect, color), keyboard, speed);
     }
 
     /**
@@ -91,11 +98,11 @@ public class Paddle implements Sprite, Collidable {
             default:
             case LEFT:
                 startPoint = this.block.topLeft();
-                endPoint = startPoint.shiftPoint(-PADDLE_MOVEMENT, Axis.X);
+                endPoint = startPoint.shiftPoint(-this.speed, Axis.X);
                 break;
             case RIGHT:
                 startPoint = this.block.topLeft().shiftPoint(this.width(), Axis.X);
-                endPoint = startPoint.shiftPoint(PADDLE_MOVEMENT, Axis.X);
+                endPoint = startPoint.shiftPoint(this.speed, Axis.X);
                 break;
         }
         return new Line(startPoint, endPoint);
@@ -126,7 +133,7 @@ public class Paddle implements Sprite, Collidable {
      * @param g game to which the paddle will be added
      */
     // Add this paddle to the game.
-    public void addToGame(Game g) {
+    public void addToGame(GameLevel g) {
         g.addCollidable(this);
         g.addSprite(this);
         this.environment = g.getEnvironment();
@@ -220,4 +227,9 @@ public class Paddle implements Sprite, Collidable {
     public Color getColor() {
         return block.getColor();
     }
+
+    public Point getPaddleCenter() {
+        return this.block.getEdge(Side.TOP).middle();
+    }
+
 }

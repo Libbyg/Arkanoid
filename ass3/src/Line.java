@@ -19,7 +19,7 @@ public class Line {
     private boolean isVertical;
 
     /**
-     * Constructor that recieves two Point objects.
+     * Constructor that recieves two geometry.Point objects.
      *
      * @param x1 double
      * @param y1 double
@@ -31,10 +31,10 @@ public class Line {
         this(new Point(x1, y1), new Point(x2, y2));
     }
     /**
-     * Constructor that receives two Point objects.
+     * Constructor that receives two geometry.Point objects.
      *
-     * @param start Point.
-     * @param end Point.
+     * @param start geometry.Point.
+     * @param end geometry.Point.
      */
     public Line(Point start, Point end) {
         this.start = start;
@@ -63,7 +63,7 @@ public class Line {
     /**
      * public method middle()
      * which calculates the middle of a line
-     * @return middle Point
+     * @return middle geometry.Point
      */
     //Returns the middle point of the line
     public Point middle() {
@@ -72,7 +72,7 @@ public class Line {
 
     /**
      * public method start()
-     * @return start Point
+     * @return start geometry.Point
      */
     //Returns the start point of the line
     public Point start() {
@@ -81,7 +81,7 @@ public class Line {
 
     /**
      * public method end()
-     * @return end Point
+     * @return end geometry.Point
      */
     //Returns the end point of the line
     public Point end() {
@@ -98,7 +98,7 @@ public class Line {
      * public function intersetionWith()
      * checks if two lines intersect and returns true,
      * otherwise returns false.
-     * @param other Line
+     * @param other geometry.Line
      * @return isIntersects boolean
      */
     public Point intersectionWith(Line other) {
@@ -126,7 +126,7 @@ public class Line {
      * public function pointOnLine() checks if
      * some point is on the line and returns true
      * otherwise returns false- using Triangle inequality method
-     * @param p Point
+     * @param p geometry.Point
      * @return boolean
      */
     public boolean pointOnLine(Point p) {
@@ -137,7 +137,7 @@ public class Line {
     /**
      * public method equals()
      * checks if twolines are equal
-     * @param other Line
+     * @param other geometry.Line
      * @return boolean
      */
     //equals -- return true is the lines are equal, false otherwise

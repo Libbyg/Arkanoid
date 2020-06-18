@@ -1,9 +1,12 @@
-/**
+package game; /**
  * @author Libby Goldin 204566236
  * @version 1.0
  * @since 2020-05-06
  */
 import biuoop.DrawSurface;
+import geometry.Line;
+import geometry.Point;
+
 import java.awt.Color;
 
 /**
@@ -164,7 +167,7 @@ public class Ball implements Sprite {
      * adding the ball to the game.
      * @param game with ball added to it.
      */
-    public void addToGame(Game game) {
+    public void addToGame(GameLevel game) {
         game.addSprite(this);
         game.assignEnv(this);
     }
@@ -173,7 +176,7 @@ public class Ball implements Sprite {
      * removeFromGame method removes the ball from the game.
      * @param game after it's changed and the ball removed from it.
      */
-    public void removeFromGame(Game game) {
+    public void removeFromGame(GameLevel game) {
         game.removeSprite(this);
         game.assignEnv(this);
     }

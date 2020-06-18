@@ -1,11 +1,14 @@
-/**
+package geometry; /**
  * @author Libby Goldin 204566236
  *
  * @version 1.0
  *
  * @since 2020-04-22
  */
+import utilities.Utilities;
+
 import java.util.List;
+
 
 /**
  * class of geometry.Line object.

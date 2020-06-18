@@ -83,7 +83,7 @@ public class Paddle implements Sprite, Collidable {
     /**
      * movementTrajectory method calculates
      * @param side
-     * @return Line
+     * @return geometry.Line
      */
     private Line movementTrajectory(Side side) {
         Point endPoint, startPoint;
@@ -222,7 +222,7 @@ public class Paddle implements Sprite, Collidable {
     }
 
     /**
-     * method getColor returns paddle color
+     * method getFillColor returns paddle color
      * @return color
      */
     public Color getColor() {

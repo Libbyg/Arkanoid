@@ -43,7 +43,7 @@ public class Rectangle {
     /**
      * the method returns list of intersection points between line and rectangle.
      * @param line that crosses the rectangle
-     * @return List of Point objects
+     * @return List of geometry.Point objects
      */
     // Return a (possibly empty) List of intersection points
     // with the specified line.
@@ -101,7 +101,7 @@ public class Rectangle {
     /**
      * getEdge method returns the line of the desirable rectangle.
      * @param edge enum os one of rectangle's edges
-     * @return Line of rectangle's specific edge
+     * @return geometry.Line of rectangle's specific edge
      */
     public Line getEdge(Side edge) {
         return this.edges.get(edge);

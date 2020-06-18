@@ -1,8 +1,11 @@
-/**
+package game; /**
  * @author Libby Goldin 204566236
  * @version 1.0
  * @since 2020-05-06
  */
+import geometry.Line;
+import geometry.Point;
+
 import java.util.ArrayList;
 import java.util.List;
 

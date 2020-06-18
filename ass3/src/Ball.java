@@ -129,7 +129,7 @@ public class Ball implements Sprite {
 
     /**
      * method calculates the ball's trajectory line of movement and returns it
-     * @return Line
+     * @return geometry.Line
      */
     private Line calcTrajectory() {
         Point nextPoint;

@@ -1,9 +1,14 @@
-/**
+package game; /**
  * @author Libby Goldin 204566236
  * @version 1.0
  * @since 2020-05-06
  */
 import biuoop.DrawSurface;
+import geometry.Line;
+import geometry.Point;
+import geometry.Rectangle;
+import utilities.Side;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -177,7 +182,7 @@ public class Block implements Collidable, Sprite, HitNotifier {
      * addToGame method adds the block to game.
      * @param game passed to method to be changed - block will be added to it.
      */
-    public void addToGame(Game game) {
+    public void addToGame(GameLevel game) {
         game.addSprite(this);
         game.addCollidable(this);
     }
@@ -187,7 +192,7 @@ public class Block implements Collidable, Sprite, HitNotifier {
      * @param game passed to method to be changed
      * remove the block from it and it sprite list.
      */
-    public void removeFromGame(Game game) {
+    public void removeFromGame(GameLevel game) {
         game.removeSprite(this);
         game.removeCollidable(this);
     }

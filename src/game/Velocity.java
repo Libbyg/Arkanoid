@@ -1,3 +1,9 @@
+package game;
+
+import geometry.Point;
+import utilities.Side;
+import utilities.Utilities;
+
 /**
  * @author Libby Goldin 204566236
  * @version 1.0

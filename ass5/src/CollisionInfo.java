@@ -22,7 +22,7 @@ public class CollisionInfo {
 
     /**
      * returning collision point.
-     * @return Point
+     * @return geometry.Point
      */
     public Point collisionPoint() {
         return this.collisionPoint;
