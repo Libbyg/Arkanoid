@@ -1,10 +1,6 @@
 package geometry;
-
 import utilities.Axis;
 import utilities.Utilities;
-
-import static utilities.Axis.*;
-
 /**
  * @author Libby Goldin 204566236
  * @version 1.0

@@ -1,3 +1,9 @@
+
+/**
+ * @author Libby Goldin 204566236
+ * @version 1.0
+ * @since 21/6/2020
+ */
 package shapes;
 
 import biuoop.DrawSurface;
@@ -7,7 +13,7 @@ import geometry.Point;
 import java.awt.Color;
 
 public class LineShape implements Shape {
-    public Color color;
+    private Color color;
     private Line shape;
 
     public LineShape(Line shape, Color color) {

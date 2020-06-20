@@ -1,6 +1,12 @@
+
+/**
+ * @author Libby Goldin 204566236
+ * @version 1.0
+ * @since 21/6/2020
+ */
 package shapes;
 
-import game.Sprite;
+import game.objects.Sprite;
 
 import java.awt.Color;
 
