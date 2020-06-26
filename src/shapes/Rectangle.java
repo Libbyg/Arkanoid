@@ -9,7 +9,13 @@ import geometry.Point;
 import biuoop.DrawSurface;
 import java.awt.Color;
 
+/**
+ * Rectangle shape class.
+ */
 public class Rectangle implements Shape {
+    /**
+     * fields.
+     */
     private Point topLeft;
     private Point bottomRight;
     private int width;
@@ -18,7 +24,13 @@ public class Rectangle implements Shape {
     private Color fillColor;
     private boolean fill;
 
-    public Rectangle (Point topLeft, Point bottomRight, Color perimeterColor) {
+    /**
+     * Constructor. (without fill)
+     * @param topLeft point of rectangle.
+     * @param bottomRight point of rectangle.
+     * @param perimeterColor of rectangle.
+     */
+    public Rectangle(Point topLeft, Point bottomRight, Color perimeterColor) {
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;
         this.width = (int) (bottomRight.getX() - topLeft.getX());
@@ -27,7 +39,14 @@ public class Rectangle implements Shape {
         this.fill = false;
     }
 
-    public Rectangle (Point topLeft, Point bottomRight, Color perimeterColor, Color fillColor) {
+    /**
+     * Constructor. (with fill)
+     * @param topLeft point of rectangle.
+     * @param bottomRight point of rectangle.
+     * @param perimeterColor of rectangle.
+     * @param fillColor of rectangle.
+     */
+    public Rectangle(Point topLeft, Point bottomRight, Color perimeterColor, Color fillColor) {
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;
         this.width = (int) (bottomRight.getX() - topLeft.getX());
@@ -37,27 +56,48 @@ public class Rectangle implements Shape {
         this.fill = true;
     }
 
+    /**
+     * get the filling color of a rectangle.
+     * @return color of rectangle's fill.
+     */
         @Override
-        public Color getFillColor () {
+        public Color getFillColor() {
             return this.fillColor;
         }
 
+    /**
+     * get the perimeter color of a rectangle.
+     * @return color of rectangle's perimeter.
+     */
         @Override
-        public Color getPerimeterColor () {
+        public Color getPerimeterColor() {
             return this.perimeterColor;
         }
 
-        @Override
-        public void setFill (boolean value) {
+    /**
+     * the method defines if the rectangle will be filled or not.
+     * @param value boolean true or false if the rectangle will have a filling color.
+     */
+    @Override
+        public void setFill(boolean value) {
             this.fill = value;
         }
 
+    /**
+     * setting colors for a rectangle.
+     * @param perimeterColor of rectangle.
+     * @param fillColor of rectangle.
+     */
         @Override
-        public void setColors (Color perimeterColor, Color fillColor) {
+        public void setColors(Color perimeterColor, Color fillColor) {
             this.perimeterColor = perimeterColor;
             this.fillColor = fillColor;
         }
 
+    /**
+     * drawing the rectangle.
+     * @param d surface on which we draw the sprites
+     */
         @Override
         public void drawOn(DrawSurface d) {
             d.setColor(this.perimeterColor);
@@ -70,7 +110,7 @@ public class Rectangle implements Shape {
         }
 
         @Override
-        public void timePassed () {
+        public void timePassed() {
             //nothing
         }
     }

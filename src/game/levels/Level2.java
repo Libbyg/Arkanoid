@@ -43,7 +43,7 @@ public class Level2 extends AbstractLevelInformation {
      * @param bottomRight point of screen gui.
      */
     public Level2(Point topLeft, Point bottomRight) {
-        super("Wide Easy", 40, 110, 6, Color.cyan.darker());
+        super("Wide Easy", 5, 110, 6, Color.cyan.darker());
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;
     }

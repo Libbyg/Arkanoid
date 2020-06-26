@@ -41,7 +41,7 @@ public class Level3 extends AbstractLevelInformation {
      * @param bottomRight point of screen gui.
      */
     public Level3(Point topLeft, Point bottomRight) {
-        super("Disco", 40, 130, 8, Color.YELLOW);
+        super("Disco", 10, 130, 8, Color.YELLOW);
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;
     }

@@ -45,7 +45,7 @@ public class Level4 extends AbstractLevelInformation {
      * @param bottomRight point of screen gui.
      */
     public Level4(Point topLeft, Point bottomRight) {
-        super("Colorful Mountains", 40, 135, 10, Color.ORANGE);
+        super("Colorful Mountains", 20, 135, 10, Color.ORANGE);
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;
     }

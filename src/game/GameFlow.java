@@ -42,19 +42,23 @@ public class GameFlow {
      */
     public void runLevels(List<LevelInformation> levels) {
         this.score = new Counter(0);
+        boolean win = true;
         for (LevelInformation levelInfo : levels) {
             GameLevel level = new GameLevel(this.animationRunner, this.score);
             level.initialize(levelInfo);
             level.run();
             if (level.getStatus() == LevelEndedStatus.LOST) {
+                win = false;
                 this.animationRunner.run(new KeyPressStoppableAnimation(this.animationRunner.getKeyboardSensor(),
                         KeyboardSensor.SPACE_KEY, new EndScreen(score.getValue())));
                 break;
             }
             this.score.increase(100);
         }
-        this.animationRunner.run(new KeyPressStoppableAnimation(this.animationRunner.getKeyboardSensor(),
-                KeyboardSensor.SPACE_KEY, new WinScreen(score.getValue())));
+        if (win) {
+            this.animationRunner.run(new KeyPressStoppableAnimation(this.animationRunner.getKeyboardSensor(),
+                    KeyboardSensor.SPACE_KEY, new WinScreen(score.getValue())));
+        }
         //todo as part of ass7 insert high scores
     }
 }
